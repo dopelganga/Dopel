@@ -24,7 +24,7 @@ function CoralFooter() {
         </Link>
         <div className="flex flex-col justify-center">
           <a
-            href="https://twitter.com/0xCoral"
+            href="https://x.com/dopelgangafi"
             className="flex h-full w-5 flex-col justify-center"
             target="_blank"
             rel="noreferrer"
