@@ -5,5 +5,5 @@
       "src": "web/package.json",
       "use": "@vercel/next"
     }
-  ],
-  }
+  ]
+}
