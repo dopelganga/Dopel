@@ -11,15 +11,15 @@ export default function About() {
           className="mt-4 text-4xl font-extrabold tracking-tight
                   text-zinc-50 sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl"
         >
-          Welcome to Backpack
+          Welcome to Dopelganga
         </h1>
 
         <div className="flex max-w-lg flex-col gap-4 text-center text-zinc-400">
           <p className="text-zinc-400">
-            Backpack is brought to you by{' '}
+            Dopelganga is brought to you by{' '}
             <a
               className="text-teal-500"
-              href="https://backpack.app"
+              href="https://dopelganga.app"
               target="_blank"
               rel="noreferrer"
             >
@@ -30,7 +30,7 @@ export default function About() {
               className="text-teal-500"
               target="_blank"
               rel="noreferrer"
-              href="https://backpack.app"
+              href="https://dopelganga.app"
             >
               xNFTs.
             </a>
@@ -47,9 +47,9 @@ export default function About() {
               className="text-teal-500"
               target="_blank"
               rel="noreferrer"
-              href="https://twitter.com/Backpack"
+              href="https://twitter.com/Dopelganga"
             >
-              Follow Backpack on Twitter.
+              Follow Dopelganga on Twitter.
             </a>
           </p>
         </div>

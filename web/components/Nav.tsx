@@ -1,19 +1,22 @@
-import { Disclosure, Menu } from '@headlessui/react';
-import { ExternalLinkIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import Image from 'next/legacy/image';
+import { Disclosure as DisclosureRaw, Menu as MenuRaw } from '@headlessui/react';
+import { ExternalLinkIcon as ExternalLinkIconRaw, MenuIcon as MenuIconRaw, XIcon as XIconRaw } from '@heroicons/react/outline';
+import ImageRaw from 'next/legacy/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { memo } from 'react';
+
+const Disclosure: any = DisclosureRaw;
+const Menu: any = MenuRaw;
+const ExternalLinkIcon: any = ExternalLinkIconRaw;
+const MenuIcon: any = MenuIconRaw;
+const XIcon: any = XIconRaw;
+const Image: any = ImageRaw;
 
 function classNames(...classes: any) {
   return classes.filter(Boolean).join(' ');
 }
 
 export const mainMenu = [
-  {
-    title: 'Exchange',
-    path: 'https://backpack.exchange'
-  },
   {
     title: 'Downloads',
     path: '/downloads'
@@ -25,16 +28,22 @@ function Nav() {
 
   return (
     <>
-      <Disclosure as="nav" className="bg-zinc-900">
+  <Disclosure as="nav" className="bg-black shadow-lg fixed top-0 left-0 w-full z-50 border-b border-neutral-900">
         {({ open }) => (
           <>
             <div className=" mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
               <div className="relative flex h-16 items-center justify-between">
-                <div className="flex items-center gap-4 px-2 lg:px-0">
-                  {/* Logo */}
+                <div className="flex items-center gap-3 px-2 lg:px-0">
+                  {/* Logo and Brand */}
                   <Link href="/">
-                    <div className="flex">
-                      <Image alt="Backpack" src="/backpack.svg" width={150} height={50} />
+                    <div className="flex items-center gap-2">
+                      <Image alt="Dopelganga" src="/logo.svg" width={40} height={40} />
+                      <span
+                        className="ml-1 text-lg font-extrabold tracking-tight text-white select-none"
+                        style={{ letterSpacing: '-0.02em', color: '#fff' }}
+                      >
+                        Dopelganga
+                      </span>
                     </div>
                   </Link>
                 </div>
@@ -42,61 +51,22 @@ function Nav() {
                 {/* Navigation */}
                 <div className="hidden justify-center gap-2 lg:flex">
                   {mainMenu.map((item, index) => {
-                    if (item.title === 'Exchange') {
-                      return (
-                        <a
-                          key={index}
-                          href={item.path}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                    // Only Downloads tab is present
+                    return (
+                      <Link key={index} href={item.path}>
+                        <button
                           className={classNames(
-                            'flex gap-1 px-3 py-2 text-sm font-medium tracking-wide text-zinc-100',
-                            router.pathname === item.path && 'rounded-lg bg-zinc-900'
+                            'flex gap-1 px-6 py-2 text-sm font-semibold tracking-wide',
+                            'text-gray-400 border border-white border-opacity-30 bg-white bg-opacity-10',
+                            'rounded-full transition hover:bg-opacity-20',
+                            router.pathname === item.path && 'ring-2 ring-white ring-opacity-40'
                           )}
+                          style={{ boxShadow: '0 2px 12px 0 rgba(255,255,255,0.04)' }}
                         >
                           {item.title}
-                        </a>
-                      );
-                    } else if (item.title === 'Support') {
-                      return (
-                        <Menu key={index} as="div" className="relative">
-                          <Menu.Button className="px-3 py-2 text-sm font-medium tracking-wide text-zinc-100">
-                            {item.title}
-                          </Menu.Button>
-                          <Menu.Items className="absolute left-0 mt-2 rounded-lg bg-[#27272A] px-3 text-sm font-medium tracking-wide text-zinc-100">
-                            {[
-                              { title: 'Discord', link: 'http://discord.gg/backpack' },
-                              { title: 'User Guides', link: 'https://help.backpack.app' }
-                            ].map(item => (
-                              <Menu.Item key={item.title}>
-                                <div className="w-24 py-2">
-                                  <a href={item.link} target="_blank" rel="noopener noreferrer">
-                                    {item.title}
-                                  </a>
-                                </div>
-                              </Menu.Item>
-                            ))}
-                          </Menu.Items>
-                        </Menu>
-                      );
-                    } else {
-                      return (
-                        <Link key={index} href={item.path}>
-                          <button
-                            className={classNames(
-                              'flex gap-1 px-3 py-2 text-sm font-medium',
-                              'tracking-wide text-zinc-100',
-                              router.pathname === item.path && 'rounded-lg bg-zinc-900'
-                            )}
-                          >
-                            {item.title}
-                            {item.title === 'For Developers' && (
-                              <ExternalLinkIcon className="g-5 w-5" />
-                            )}
-                          </button>
-                        </Link>
-                      );
-                    }
+                        </button>
+                      </Link>
+                    );
                   })}
                 </div>
 
@@ -127,12 +97,14 @@ function Nav() {
                   <Link key={index} href={item.path}>
                     <button
                       className={classNames(
-                        'flex gap-1 px-3 py-2 font-medium tracking-wide text-zinc-100',
-                        router.pathname === item.path && 'rounded-lg bg-zinc-900'
+                        'flex gap-1 px-6 py-2 font-semibold tracking-wide',
+                        'text-gray-400 border border-white border-opacity-30 bg-white bg-opacity-10',
+                        'rounded-full transition hover:bg-opacity-20',
+                        router.pathname === item.path && 'ring-2 ring-white ring-opacity-40'
                       )}
+                      style={{ boxShadow: '0 2px 12px 0 rgba(255,255,255,0.04)' }}
                     >
                       {item.title}
-                      {item.title === 'For Developers' && <ExternalLinkIcon className="g-5 w-5" />}
                     </button>
                   </Link>
                 ))}

@@ -15,14 +15,14 @@ function Panel({
   subtitle?: string;
   href?: string;
 }) {
-  const rootClasses = 'h-[88px] w-full rounded-xl bg-[#27272A]';
+  const rootClasses = 'h-[88px] w-full rounded-full border border-white border-opacity-30 bg-white bg-opacity-10 text-gray-400 font-semibold flex items-center transition hover:bg-opacity-20 shadow';
 
   const inner = (
-    <div className="flex h-full items-center gap-4 p-6">
-      <Image alt={alt} src={icon} height={40} width={40} />
+    <div className="flex h-full items-center gap-4 px-6 py-2">
+      <Image alt={alt} src={icon} height={32} width={32} />
       <div className="flex flex-col">
-        <h4 className="text-lg font-bold tracking-wide">{title}</h4>
-        {subtitle && <h5 className="text-xs tracking-wide">{subtitle}</h5>}
+        <h4 className="text-base font-semibold tracking-wide text-gray-400">{title}</h4>
+        {subtitle && <h5 className="text-xs tracking-wide text-gray-400">{subtitle}</h5>}
       </div>
     </div>
   );
@@ -58,13 +58,13 @@ function _MobileSection() {
         alt="ios-icon"
         icon="/brands/ios.svg"
         title="App Store"
-        href="https://apps.apple.com/us/app/backpack-crypto-wallet/id6445964121"
+  href="https://apps.apple.com/us/app/dopelganga-crypto-wallet/id6445964121"
       />
       <Panel
         alt="android-icon"
         icon="/brands/android.svg"
         title="Google Play"
-        href="https://play.google.com/store/apps/details?id=app.backpack.mobile"
+  href="https://play.google.com/store/apps/details?id=app.dopelganga.mobile"
       />
       <AndroidAPKDownload />
     </div>
@@ -117,19 +117,19 @@ function _DesktopSection() {
         alt="chrome-icon"
         icon="/brands/chrome.svg"
         title="Chrome"
-        href="https://chrome.google.com/webstore/detail/backpack/aflkmfhebedbjioipglgcbcmnbpgliof"
+  href="https://chrome.google.com/webstore/detail/dopelganga/aflkmfhebedbjioipglgcbcmnbpgliof"
       />
       <Panel
         alt="brave-icon"
         icon="/brands/brave.svg"
         title="Brave"
-        href="https://chrome.google.com/webstore/detail/backpack/aflkmfhebedbjioipglgcbcmnbpgliof"
+  href="https://chrome.google.com/webstore/detail/dopelganga/aflkmfhebedbjioipglgcbcmnbpgliof"
       />
       <Panel
         alt="arc-icon"
         icon="/brands/arc.svg"
         title="Arc"
-        href="https://chrome.google.com/webstore/detail/backpack/aflkmfhebedbjioipglgcbcmnbpgliof"
+  href="https://chrome.google.com/webstore/detail/dopelganga/aflkmfhebedbjioipglgcbcmnbpgliof"
       />
     </div>
   );

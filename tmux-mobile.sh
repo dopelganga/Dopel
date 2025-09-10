@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Create a new tmux session
-tmux new-session -d -s backpack
+tmux new-session -d -s dopelganga
 tmux rename-window 'terminal'
 
 # Split the window vertically
@@ -26,6 +26,6 @@ tmux attach-session -t backpack
 #
 # ----------------------------
 # 10% viewport |
-# app-mobile   | backpack root
+# app-mobile   | dopelganga root
 # yarn ios     | yarn start:mobile
 #              |

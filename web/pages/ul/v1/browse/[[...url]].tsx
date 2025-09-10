@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    backpack?: { isBackpack?: boolean };
+  dopelganga?: { isDopelganga?: boolean };
   }
 }
 
@@ -13,8 +13,8 @@ export default function Browse() {
   useEffect(() => {
     let timer;
 
-    if (window.backpack?.isBackpack) {
-      // Backpack is installed, redirect user to the destination URL
+  if (window.dopelganga?.isDopelganga) {
+  // Dopelganga is installed, redirect user to the destination URL
       try {
         const [, , escapedUrl] = router.asPath.match(/\/ul(\/v1)?\/browse\/([^?]+)/);
         const { protocol, href } = new URL(decodeURIComponent(escapedUrl));
@@ -27,7 +27,7 @@ export default function Browse() {
       }
     }
 
-    // Backpack not installed or invalid URL, redirect to downloads
+  // Dopelganga not installed or invalid URL, redirect to downloads
     timer = setTimeout(() => {
       router.replace('/downloads');
     }, 5000);

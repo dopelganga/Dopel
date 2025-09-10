@@ -7,21 +7,29 @@ import Nav from '../components/Nav';
 
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+import React, { type ComponentType } from 'react';
+
+function MyApp({ Component, pageProps }: AppProps & { Component: ComponentType<any> }) {
   return (
     <>
-      <Head>
-        <meta name="twitter:title" content="Backpack - A home for your xNFT apps" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:image"
-          content="https://www.backpack.app/_next/image?url=%2Fbrands%2Fbackpack-twitter.png&w=3840&q=75"
-        />
-        <meta name="apple-itunes-app" content="app-id=6445964121" />
-        <title>Backpack</title>
-      </Head>
+      {React.createElement(
+        Head as any,
+        null,
+        <>
+          <meta name="twitter:title" content="Dopelganga - A home for your xNFT apps" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:image"
+            content="https://www.dopelganga.app/_next/image?url=%2Fbrands%2Fdopelganga-twitter.png&w=3840&q=75"
+          />
+          <meta name="apple-itunes-app" content="app-id=6445964121" />
+          <title>Dopelganga</title>
+        </>
+      )}
 
-      <PlausibleProvider domain="backpack.app" trackOutboundLinks={true}>
+      {React.createElement(
+        PlausibleProvider as any,
+        { domain: "dopelganga.app", trackOutboundLinks: true },
         <div className="bg-zinc-900">
           <div
             className="justify-betwee mx-auto flex min-h-screen
@@ -32,7 +40,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             </div>
 
             <div className="mb-auto px-5 py-10 md:px-10">
-              <Component {...pageProps} />
+              {Component && (Component as React.ComponentType<any>) && (
+                React.createElement(Component as React.ComponentType<any>, pageProps)
+              )}
             </div>
 
             <div className="items-end pb-8">
@@ -40,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </div>
           </div>
         </div>
-      </PlausibleProvider>
+      )}
     </>
   );
 }

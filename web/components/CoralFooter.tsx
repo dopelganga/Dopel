@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 function CoralFooter() {
@@ -33,7 +33,7 @@ function CoralFooter() {
           </a>
         </div>
         <a
-          href="https://github.com/coral-xyz"
+          href="https://github.com/dopelganga/Dopel"
           className="flex w-5 flex-col justify-center"
           target="_blank"
           rel="noreferrer"

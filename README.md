@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="/assets/backpack.png" />
+  <img src="/assets/dopelganga.png" />
 
   <h1>Backpack</h1>
 
@@ -9,7 +9,7 @@
   </p>
 
   <p>
-    <a href="https://github.com/coral-xyz/backpack/actions"><img alt="Build Status" src="https://github.com/coral-xyz/backpack/actions/workflows/pull_requests_and_merges.yml/badge.svg" /></a>
+  <a href="https://github.com/dopelganga/Dopel/actions"><img alt="Build Status" src="https://github.com/dopelganga/Dopel/actions/workflows/pull_requests_and_merges.yml/badge.svg" /></a>
     <a href="https://docs.xnfts.dev"><img alt="Tutorials" src="https://img.shields.io/badge/docs-tutorials-blueviolet" /></a>
     <a href="https://discord.gg/RhKxgS8SaD"><img alt="Discord Chat" src="https://img.shields.io/badge/chat-discord-blueviolet" /></a>
   </p>
@@ -41,7 +41,7 @@
 
 ## Installing the Latest Release
 
-If you'd like to install the latest dev release, grab the latest **build.zip** [here](https://github.com/coral-xyz/backpack/releases)
+If you'd like to install the latest dev release, grab the latest **build.zip** [here](https://github.com/dopelganga/Dopel/releases)
 and add it to your local chrome profile, using developer mode. See the video below.
 
 ## Developing Locally
@@ -51,7 +51,7 @@ https://user-images.githubusercontent.com/101902546/173857300-fc139113-0af5-46fc
 ### Pull the code
 
 ```bash
-git clone git@github.com:coral-xyz/backpack.git
+git clone git@github.com:dopelganga/Dopel.git
 cd backpack
 ```
 
